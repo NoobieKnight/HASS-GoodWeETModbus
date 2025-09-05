@@ -1,0 +1,30 @@
+modbus:
+  - name: GoodWeModbusConnection
+    type: tcp
+    host: _IP_to_Inverter_
+    port: 502
+    sensors:
+      - name: "PV1 Voltage"
+        unit_of_measurement: V 1/10
+        slave: 1
+        address: 35103
+        input_type: holding
+        data_type: uint16
+        unique_id: "GoodWe_Vpv1"
+        device_class: voltage
+        state_class: measurement
+      - name: "EMSPowerMode"
+        slave: 1
+        address: 47511
+        input_type: holding
+        data_type: uint16
+        unique_id: "GoodWe_EMS_Power_Mode"
+      - name: "EMSPowerSet"
+        unit_of_measurement: W
+        slave: 1
+        address: 47512
+        input_type: holding
+        data_type: uint16
+        unique_id: "GoodWe_EMS_Power_Set"
+        device_class: power
+
